@@ -19,7 +19,7 @@ Dans ce TP, on apprend à générer des suites sur tableur et en Python afin d'o
 ### Pour commencer
 
 Les tableurs sont les logiciels le plus adaptés pour observer le comportement d'une suite.  
-On s'intéresse ici aux trois suites $(u)$, $(v)$ et $(w)$ définies pour tout entier naturel $n$ par :
+On s'intéresse ici aux trois suites $u$, $v$ et $w$ définies pour tout entier naturel $n$ par :
 
 $$
 u_n = n^2+n+41 \qquad\qquad \left\lbrace\begin{array}{lcl}v_0&=&1\\ v_{n+1}&=&2-3v_n\end{array}\right. \qquad\qquad \left\lbrace\begin{array}{lcl}w_0&=&5\\ w_{n+1}&=&w_n-4n^2+1\end{array}\right.
@@ -27,7 +27,7 @@ $$
 
 !!! bug "Vocabulaire"
 
-    La suite $(u)$ est dite **explicite** alors que $(v)$ est dite **récurrente**. La suite $(w)$ est plutôt considérée comme **récurrente**.
+    La suite $u$ est dite **explicite** alors que $v$ est dite **récurrente**. La suite $w$ est plutôt considérée comme **récurrente**.
 
 !!! note "Quelques manipulations"
 
@@ -35,11 +35,11 @@ $$
     <center>
         <img src="./images/calc.png" alt="image" width="800" height="auto">
     </center>
-    2. Reproduire le tableau ci-dessous avec la valeur de $n$ qui varie de 0 jusque 100.
+    2. Reproduisez le tableau ci-dessous avec la valeur de $n$ qui varie de 0 jusque 100.
     <center>
         <img src="./images/tableur1.png" alt="image" width="400" height="auto">
     </center>
-    3. Dans la cellule $B2$ (concernant la suite $(u)$), saisissez la formule $\fbox{=PUISSANCE(A2;2)+A2+41}$ puis validez.
+    3. Dans la cellule $B2$ (concernant la suite $u$), saisissez la formule $\fbox{=PUISSANCE(A2;2)+A2+41}$ puis validez.
     4. Étirez cette formule en double cliquant sur le petit carré en bas à droite de cette cellule.
     <center>
         <img src="./images/tableur2.png" alt="image" width="400" height="auto">
@@ -49,7 +49,7 @@ $$
 
 ### À vous de jouer
 
-On considère les suites $(u)$, $(v)$ et $(w)$ définies pour tout entier naturel $n$ par :
+On considère les suites $u$, $v$ et $w$ définies pour tout entier naturel $n$ par :
 
 $$
 u_n = 3^n+n-1 \qquad\qquad \left\lbrace\begin{array}{lcl}v_0&=&0\\ v_{n+1}&=&3v_n-2n+3\end{array}\right. \qquad\qquad w_n = v_n-n+1
@@ -71,13 +71,13 @@ Le langage Python est un atout informatique pour sa praticité et sa capacité �
 
     En python, pour définir une suite on utilise la notion de fonction.
 
-On considère les suites $(u)$, $(v)$ et $(w)$ définies pour tout entier naturel $n$ par :
+On considère les suites $u$, $v$ et $w$ définies pour tout entier naturel $n$ par :
 
 $$
 u_n = 3n^2-4n+1 \qquad\qquad \left\lbrace\begin{array}{lcl}v_0&=&-4\\ v_{n+1}&=&\sqrt{2v_n+9}\end{array}\right. \qquad\qquad \left\lbrace\begin{array}{lcl}w_1&=&\frac{1}{2}\\ w_{n+1}&=&\frac{n+1}{2n}w_n\end{array}\right.
 $$
 
-Pour les suites explicites comme $(u)$, il est très simple d'utiliser le langage Python :
+Pour les suites explicites comme $u$, il est très simple d'utiliser le langage Python :
 
 !!! note "Quelques manipulations"
 
@@ -92,13 +92,13 @@ Pour les suites explicites comme $(u)$, il est très simple d'utiliser le langag
             return 3*n**2-4*n+1
         ```
     3. Enregistrez le fichier puis exécutez le grâce au bouton  <img src="./images/run.png" alt="image" style="vertical-align:middle">
-    4. Pour générer les dix premiers termes de la suite $(u)$, tapez dans la console (partie inférieure du logiciel), l'instruction `[u(k) for k in range(10)]`.
+    4. Pour générer les dix premiers termes de la suite $u$, tapez dans la console (partie inférieure du logiciel), l'instruction `[u(k) for k in range(10)]`.
     <center>
         <img src="./images/thonny2.png" alt="image" width="600" height="auto">
     </center>
 
-En python, il n'est possible que de générer des suites de la forme $u(n) = $ et non pas $u(n+1)$.  
-Ainsi, pour la suite $(v)$ définie par : 
+En python, il n'est possible que de générer des suites de la forme $u(n)$ et non pas $u(n+1)$.  
+Ainsi, pour la suite $v$ définie par : 
 
 $$
 \left\lbrace\begin{array}{lcl}v_0&=&-4\\ v_{n+1}&=&\sqrt{2v_n+9}\end{array}\right.
@@ -132,14 +132,14 @@ $$
         <img src="./images/thonny3.png" alt="image" width="600" height="auto">
     </center>
 
-Pour la suite $(w)$ définie par :
+Pour la suite $w$ définie par :
 
 $$
 \left\lbrace\begin{array}{lcl}w_1&=&\frac{1}{2}\\ w_{n+1}&=&\frac{n+1}{2n}w_n\end{array}\right.
 $$
 
 il faut faire attention au fait que le premier terme est $w_1$ et non pas $w_0$.  
-De plus, il faudra bien décaler tous les indices pour générer la bonne suite. En effet, $(w)$ devient après décalage :
+De plus, il faudra bien décaler tous les indices pour générer la bonne suite. En effet, $w$ devient après décalage :
 
 $$
 \left\lbrace\begin{array}{lcl}w_1&=&\frac{1}{2}\\ w_{n}&=&\frac{(n-1)+1}{2(n-1)}w_{n-1} = \frac{n}{2(n-1)}w_{n-1}\end{array}\right.
